@@ -1,6 +1,6 @@
 package Seminar_4;
 
-public class Hero extends Warrior implements Weapon{
+public class Hero extends Warrior<Weapon, SuperShield>{
 
 
 
@@ -8,17 +8,13 @@ public class Hero extends Warrior implements Weapon{
         super(name, healthPoint, weapon);    
     }
 
+    public Hero(String name, int healthPoint, Weapon weapon, SuperShield shield) {
+        super(name, healthPoint, weapon, shield);    
+    }
+
     @Override
     public String toString() {
         return String.format("Hero: %s", super.toString());
     }
-
-    @Override
-    public Integer damage() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-
     
 }

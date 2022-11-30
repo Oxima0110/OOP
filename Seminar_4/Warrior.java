@@ -21,16 +21,23 @@
 // команде нет лучников, то расстояние поражения считать 
 // равным 0.
 
-
 package Seminar_4;
 
-public abstract class Warrior {
+public abstract class Warrior<T, E> {
 
     private String name;
     private int healthPoint;
-    private Weapon weapon;
+    private T weapon;
+    private E shield;
 
-    public Warrior(String name, int healthPoint, Weapon weapon) {
+    public Warrior(String name, int healthPoint, T weapon, E shield) {
+        this.name = name;
+        this.healthPoint = healthPoint;
+        this.weapon = weapon;
+        this.shield = shield;
+    }
+
+    public Warrior(String name, int healthPoint, T weapon) {
         this.name = name;
         this.healthPoint = healthPoint;
         this.weapon = weapon;
@@ -44,8 +51,12 @@ public abstract class Warrior {
         return healthPoint;
     }
 
-    public Weapon getWeapon() {
+    public T getWeapon() {
         return weapon;
+    }
+
+    public E getShield() {
+        return shield;
     }
 
     public void setHealthPoint(int healthPoint) {
@@ -54,7 +65,9 @@ public abstract class Warrior {
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %d", getWeapon(), getName(), getHealthPoint());
+        if (this.shield == null) {
+            return String.format("%s, %s, health - %d", getName(), getWeapon(), getHealthPoint());
+        }
+        return String.format("%s, %s, %s, health - %d", getName(), getWeapon(), getShield(), getHealthPoint());
     }
-
 }
