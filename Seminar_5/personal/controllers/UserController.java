@@ -42,5 +42,11 @@ public class UserController {
             throw new Exception("Отсутствует телефон");
         }
     }
+    public void deleteUser(String deleteId) throws Exception {
+        repository.deleteUser(deleteId);
+    }
+
+    
+
     
 }

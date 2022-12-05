@@ -3,12 +3,12 @@ package personal.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositoryFile implements Repository{
-    
-    private UserMapper mapper = new UserMapper();
-    private FileOperation fileOperation;
+public class RepozitoryFileNew implements Repository{
 
-    public RepositoryFile(FileOperation fileOperation) {
+    UserMapperNew mapper = new UserMapperNew();
+    FileOperation fileOperation;
+    
+    public RepozitoryFileNew(FileOperation fileOperation) {
         this.fileOperation = fileOperation;
     }
 
@@ -75,14 +75,11 @@ public class RepositoryFile implements Repository{
     throw new Exception("User not found");
 }
 
-    
-    public void deleteUser(String deleteId) throws Exception {
-        List<User> users = getAllUsers();
-        User deleteUser = findUserById(users, deleteId);
-        users.remove(deleteUser);
-        saveUsers(users);
-        }
-
-
+public void deleteUser(String deleteId) throws Exception {
+    List<User> users = getAllUsers();
+    User deleteUser = findUserById(users, deleteId);
+    users.remove(deleteUser);
+    saveUsers(users);
+    }
 
 }

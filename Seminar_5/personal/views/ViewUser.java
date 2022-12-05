@@ -47,9 +47,12 @@ public class ViewUser {
                         }
                         break;
                     case UPDATE:
-
                         User updateUser = setUser(true);
                         userController.updateUser(updateUser);
+                        break;
+                    case DELETE:
+                        String deleteId = prompt("Идентификатор пользователя: ");
+                        userController.deleteUser(deleteId);
                         break;
                 }
             } catch (Exception e) {
