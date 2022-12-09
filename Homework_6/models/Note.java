@@ -52,7 +52,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return String.format("Идентафикатор: %s\nИмя: %s,\nФамилия: %s,\nТелефон: %s", getId(), getData(), getHeader(), getText());
+        return String.format("Идентафикатор: %s\nДата: %s,\nЗаголовок: %s,\nСодержанине: %s", getId(), getData(), getHeader(), getText());
     }
        
 }

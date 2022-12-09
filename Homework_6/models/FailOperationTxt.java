@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FailOperationTxt  implements FailOperation {
+import personal.model.FileOperation;
+
+public class FailOperationTxt  implements FailOperation, FileOperation {
 
     private String fileName;
 

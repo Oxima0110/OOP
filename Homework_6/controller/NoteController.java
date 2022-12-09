@@ -7,14 +7,14 @@ import Homework_6.models.NoteOperation;
 
 public class NoteController {
 
-    private  NoteOperation noteOperation;
+    private NoteOperation noteOperation;
 
     public NoteController(NoteOperation noteOperation) {
         this.noteOperation = noteOperation;
     }
 
     public void saveNote(Note note) throws Exception {
-        // validateUser(user);
+        validateNote(note);
         noteOperation.CreateNote(note);
     }
 
@@ -22,5 +22,28 @@ public class NoteController {
         return noteOperation.getAllNote();
     }
 
+    public Note readNote(String noteId) throws Exception {
+        return noteOperation.readNote(noteId);
+    }
 
+    public Note updateNote(Note note) throws Exception {
+        validateNote(note);
+        return noteOperation.updateNote(note);
+    }
+
+    public void deleteNote(String deleteId) throws Exception {
+        noteOperation.deleteNote(deleteId);
+    }
+
+    private void validateNote(Note note) throws Exception {
+        if (note.getData().isEmpty()) {
+            throw new Exception("Отсутствует дата");
+        }
+        if (note.getHeader().isEmpty()) {
+            throw new Exception("Отсутствует заголовок");
+        }
+        if (note.getText().isEmpty()) {
+            throw new Exception("Отсутствует содержание");
+        }
+    }
 }
