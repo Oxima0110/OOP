@@ -2,7 +2,7 @@ package Homework_6.models;
 
 import java.util.List;
 
-public interface FailOperation {
+public interface FailOperationNote {
 
     List<String> readAllLines();
 

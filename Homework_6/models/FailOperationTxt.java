@@ -9,9 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import personal.model.FileOperation;
-
-public class FailOperationTxt  implements FailOperation, FileOperation {
+public class FailOperationTxt implements FailOperationNote {
 
     private String fileName;
 
@@ -26,7 +24,7 @@ public class FailOperationTxt  implements FailOperation, FileOperation {
 
     @Override
     public List<String> readAllLines() {
-       List<String> lines = new ArrayList<>();
+        List<String> lines = new ArrayList<>();
         try {
             File file = new File(fileName);
             FileReader fr = new FileReader(file);
@@ -62,5 +60,4 @@ public class FailOperationTxt  implements FailOperation, FileOperation {
             System.out.println(ex.getMessage());
         }
     }
-    
 }

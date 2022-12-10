@@ -3,14 +3,14 @@ package Homework_6.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import personal.model.FileOperation;
+
 
 public class NoteOperatoinTxt implements NoteOperation {
 
     private NoteMapper mapper = new NoteMapper();
-    private FileOperation fileOperation;
+    private FailOperationNote fileOperation;
 
-    public NoteOperatoinTxt(FileOperation fileOperation) {
+    public NoteOperatoinTxt(FailOperationNote fileOperation) {
         this.fileOperation = fileOperation;
     }
 
